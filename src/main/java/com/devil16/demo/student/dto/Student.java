@@ -20,5 +20,5 @@ public class Student {
 	@Builder.Default
 	private LocalDate dateOfBirth = LocalDate.of(1923,06,01);
 	@Builder.Default
-	private String contact = StringUtils.EMPTY;
+	private String status = StringUtils.EMPTY;
 }
