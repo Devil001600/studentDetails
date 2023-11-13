@@ -17,6 +17,7 @@ import com.devil16.demo.student.datamodel.StudentDetails;
 import com.devil16.demo.student.dto.Student;
 import com.devil16.demo.student.service.StudentService;
 import com.devil16.demo.student.validation.ValidErollmentId;
+import com.devil16.demo.student.validation.ValidOfClass;
 
 @RestController
 @Validated
@@ -28,7 +29,7 @@ public class StudentController {
 	
 	@GetMapping(path="/basic", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<StudentDetails>> getAllStudents(
-			@RequestParam(name="of-class", required=false) String ofClass) {
+			@RequestParam(name="of-class", required=false) @ValidOfClass String ofClass) {
 		return new ResponseEntity<>(studentService.fetchAllStudents(), HttpStatus.OK);
 	}
 	
